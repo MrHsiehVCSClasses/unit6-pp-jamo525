@@ -9,7 +9,7 @@ public class Blackjack
   public Blackjack()
   {
   }
-``/**
+  /**
   Runs games of black jack between the user and a dealer using a scanner and the methods listed below. Repeats games until user decides to stop.
   calcPoints, determineResult, isBust, isBlackjack, dealerKeepHitting, hit, printHand
   */
