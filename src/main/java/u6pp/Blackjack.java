@@ -58,7 +58,7 @@ public class Blackjack
             userHand = hit(userHand);
             if (isBust(userHand))
             {
-              System.out.println("Wipeout! busted.");
+              System.out.println("Wipeout! you busted.");
               userHit = false;
               busted = true;
             }
@@ -82,7 +82,7 @@ public class Blackjack
           dealerHand = hit(dealerHand);
           if (isBust(dealerHand))
           {
-            System.out.println("Wipeout! busted");
+            System.out.println("Wipeout! I busted");
           }
         }
       }
@@ -146,10 +146,10 @@ public class Blackjack
   */
   public static String determineResult(Card [] userHand, Card[] dealerHand)
   {
-    if (isBust(userHand) || (calcPoints(userHand) < calcPoints(dealerHand)))
-      return "User Loses. I out surfed you bro!";
-    else if (calcPoints(userHand) == 21 || calcPoints(userHand) > calcPoints(dealerHand))
+    if (calcPoints(userHand) == 21 || calcPoints(userHand) > calcPoints(dealerHand) || isBust(dealerHand))
       return "User Wins. Totally rad!";
+    else if (isBust(userHand) || (calcPoints(userHand) < calcPoints(dealerHand)))
+      return "User Loses. I out surfed you bro!";
     else
       return "User Pushes. Nice waves bro!";
   }
